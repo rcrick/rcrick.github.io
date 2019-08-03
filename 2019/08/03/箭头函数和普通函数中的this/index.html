@@ -25,10 +25,10 @@
 <li>this总是代表它的直接调用者, 例如 obj.function ,那么function中的this就是obj;</li>
 <li>在默认情况(非严格模式下,未使用 ‘use strict’),没找到直接调用者,则this指的是 window;</li>
 <li>在严格模式下,没有直接调用者的函数中的this是 undefined;</li>
-<li>使用call,apply,bind(ES5新增)绑定的,this指的是 绑定的对象。<figure class="highlight plain"><figcaption><span>not strict</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun() &#123;</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">fun() // window对象</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>使用call,apply,bind(ES5新增)绑定的,this指的是 绑定的对象.</li>
 </ol>
+<figure class="highlight plain"><figcaption><span>not strict</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun() &#123;</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">fun() // window对象</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><figcaption><span>strict</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;</span><br><span class="line">function fun() &#123;</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">fun() // undefined</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><figcaption><span>call</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun() &#123;</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">fun.call(&#123;a:1&#125;) // &#123; a: 1 &#125;</span><br></pre></td></tr></table></figure>
